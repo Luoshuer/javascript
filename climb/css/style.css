@@ -1,3 +1,26 @@
 body{ background:#eee;}
 .wrap{text-align: center;}
 #squ{background-color:black;width: 150px;height: 150px;margin: 10px auto;}
+
+/* 2 */
+.wrap-02 .btn1,.wrap-02 .btn2,.wrap-02 .btn3{width: 10px;height: 10px;display: inline-block;margin: 5px}
+.wrap-02 .btn1{background: red;}
+.wrap-02 .btn2{background: green;}
+.wrap-02 .btn3{background: black}
+
+.wrap-02 #list{ 
+	background: black;
+	color: white;
+	border: 1px solid #fff; 
+	width: 500px;
+}
+.wrap-02 #list li{ 
+	display: inline-block;
+	border: 1px solid #fff; 
+	padding: 3px 10px;
+}
+.wrap-02 #list li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 13px;
+}

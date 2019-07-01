@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页换肤</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+		var changeStyle = function(elem,attr,value){
+			elem.style[attr] = value;
+		}
+		window.onload = function(){
+			var oBtn = document.getElementById('button').getElementsByTagName('div');
+			// var oBody = document.getElementsByTagName('body');
+			var oBody = document.body;
+			var oList = document.getElementById('list');
+			var oAtt = ['background','opacity'];
+			// var oVal = ['red','green','black','0.3'];
+			var oVal = ['rgba(255,0,0,1)','rgba(0,128,0,1)','rgba(0,0,0,1)','rgba(255,0,0,0.3)','rgba(0,128,0,0.3)','rgba(0,0,0,0.3)',];
+			// console.log(oAtt[0]);
+			console.log(oBtn.length);
+			console.log(oBody);
+			console.log(oList);
+			for(var i = 0;i< oBtn.length;i++){
+				oBtn[i].index = i;
+				oBtn[i].onclick = function(){
+					console.log(i);
+					this.index == oBtn.length -1 && (oBody.style.cssText = '') && (oList.style.cssText = '');
+					changeStyle(oBody,oAtt[0],oVal[this.index+3]);
+					// changeStyle(oBody,oAtt[1],oVal[3]);
+					changeStyle(oList,oAtt[0],oVal[this.index]);
+				}
+			}
+		};
+	</script>
+</head>
+<body>
+	<div class="wrap-02">
+		<div id="button">
+			<div class="btn1"></div>
+			<div class="btn2"></div>
+			<div class="btn3"></div>
+		</div>
+		<ul id="list">
+			<li><a href='#'>新闻</a></li>
+			<li><a href='#'>娱乐</a></li>
+			<li><a href='#'>体育</a></li>
+			<li><a href='#'>电影</a></li>
+			<li><a href='#'>音乐</a></li>
+			<li><a href='#'>旅游</a></li>
+		</ul>
+	</div>
+</body>
+</html>
