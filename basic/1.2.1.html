@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script type="text/javascript">
-		
+		/* 1.2.1 */
 		var makeSound = function(animal){
 			if (animal instanceof Duck) {
 				console.log('嘎嘎嘎');
@@ -19,9 +19,105 @@
 		makeSound(new Duck());
 		makeSound(new Chicken());
 
+		// 1.2.2
+		console.log('1.2.2');
+		var makeSound = function(animal){
+			animal.sound();
+		};
+
+		var Duck = function(){}
+
+		Duck.prototype.sound = function(){
+			console.log('嘎嘎嘎');
+		};
+
+		var Chicken = function(){}
+
+		Chicken.prototype.sound = function(){
+			console.log('咯咯咯');
+		};
+
+		var Dog = function(){}
+
+		Dog.prototype.sound = function(){
+			console.log('汪汪汪');
+		};
+
+
+		makeSound(new Duck());
+		makeSound(new Chicken());
+		makeSound(new Dog());
+
+
+		// 1.2.6 Map
+		console.log('1.2.6');
+		var googleMap = {
+			show: function(){
+				console.log('开始渲染谷歌地图');
+			}
+		};
+
+		var baiduMap = {
+			show: function(){
+				console.log('开始渲染百度地图');
+			}			
+		};
+
+		var renderMap = function(type){
+			if (type === 'google') {
+				googleMap.show();
+			}else if (type === 'baidu') {
+				baiduMap.show();
+			}
+		};
+
+		renderMap('google');
+		renderMap('baidu');
+
+		//v1.2.6 pro
+		console.log('1.2.6 pro');
+		var googleMap = {
+			show: function(){
+				console.log('开始渲染谷歌地图');
+			}
+		};
+		var baiduMap = {
+			show: function(){
+				console.log('开始渲染百度地图');
+			}
+		};
+		var sogouMap = {
+			show: function(){
+				console.log('开始渲染搜狗地图');
+			}
+		};
+
+		var renderMap = function(map){
+			if (map.show instanceof Function) {
+				map.show();
+			}
+		};
+		renderMap(googleMap);
+		renderMap(baiduMap);
+		renderMap(sogouMap);
+
+		// v1.3.1 封装
+		console.log('1.3.1-->封装');
+		var myObject = (function(){
+			var _name = 'sven';
+			return {
+				getName: function(){
+					return _name;
+				}
+			}
+		})();
+
+		console.log(myObject.getName());
+		console.log(myObject._name);
+
 	</script>
 </head>
 <body>
 	
 </body>
-</html>［
+</html>
